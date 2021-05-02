@@ -11,6 +11,35 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <div class="navbar-brand"> 
+            <%= current_user.email %>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <% if current_user.is_admin %>
+                admins menu
+              <% else %>
+                 users nemu
+              <% end %>
+              <%= link_to((t("log_out")), destroy_user_session_path, method: :delete, :class => "nav-link") %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+    <div class="row">
+      <div class="col">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
