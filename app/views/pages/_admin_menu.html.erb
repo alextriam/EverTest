@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand"> 
+      <%= current_user.email %>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Інвайти</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Тестові завдання</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Відповіді</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to(t('sign_out'), destroy_user_session_path, method: :delete, :class => "nav-link") %>
+      </li>
+    </ul>
+    </div>
+</nav>
+

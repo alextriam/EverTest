@@ -1,15 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 Things you may want to cover:
 
-* Ruby version
+### Ruby version
+	2.7.2
 
-* System dependencies
+### Configuration
 
-* Configuration
+
 
 * Database creation
 
@@ -21,4 +19,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+### Add bootstrap 4 to Rails 6
+
+https://stackoverflow.com/questions/60815516/bootstrap-with-rails-6
