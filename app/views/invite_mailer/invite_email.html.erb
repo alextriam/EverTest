@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Вітаємо на EverTesting.com, <%= @email %></h1>
+    <p>
+      Запрошуємо вас на тестування.
+    </p>
+    <p>
+      Клікайте на цей лінк - <%= link_to('Пройти тестування', @url) %>.
+    </p>
+    <p>Для входу використвуйте логін та пароль:</p>
+    <p>Логін: <%= @email %></p>
+    <p>Пароль: <%= @password %></p>
+  </body>
+</html>
