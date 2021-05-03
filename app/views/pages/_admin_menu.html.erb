@@ -5,13 +5,16 @@
     </div>
     <ul class="nav justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Інвайти</a>
+        <%= link_to('Головна', root_path, class: 'nav-link')%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Тестові завдання</a>
+        <%= link_to('Інвайти', invites_path, class: 'nav-link')  %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Відповіді</a>
+        <%= link_to('Тестові', tests_path, class: 'nav-link')  %>
+      </li>
+      <li class="nav-item">
+        <%= link_to('Відповіді', solutions_path, class: 'nav-link')  %>
       </li>
       <li class="nav-item">
         <%= link_to(t('sign_out'), destroy_user_session_path, method: :delete, :class => "nav-link") %>

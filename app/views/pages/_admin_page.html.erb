@@ -30,7 +30,7 @@
       </ul>
     </div>
     <div class="card-footer">
-		  <button type="button" class="btn btn-lg btn-block btn-primary">Додати тестове</button>
+      <%= link_to('Додати тестове', new_test_path, class: 'btn btn-lg btn-block btn-primary')%>
 		</div>
   </div>
 
@@ -45,7 +45,7 @@
       </ul>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-lg btn-block btn-primary">Список відповідей</button>
+      <%= link_to('Список відповідей', solutions_path, class: 'btn btn-lg btn-block btn-primary')%>
     </div>
   </div>
 </div>
