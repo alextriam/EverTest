@@ -31,3 +31,7 @@
 
 uk:
   sign_out: Вийти
+
+  invites:
+    new:
+      new_invite: Відправити інвайт

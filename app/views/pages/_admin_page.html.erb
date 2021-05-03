@@ -10,12 +10,12 @@
     </div>
     <div class="card-body">
       <ul class="list-unstyled mt-3 mb-4">
-        <li>Інвайтів: </li>
+        <li>Інвайтів: <%= link_to(@invites, invites_path)  %></li>
         <li></li>
       </ul>
     </div>
     <div class="card-footer">
-      <button type="button" class="btn btn-lg btn-block btn-primary">Створити інвайт</button>
+    	<%= link_to('Створити інвайт', new_invite_path, class: 'btn btn-lg btn-block btn-primary')%>
     </div>
   </div>
 

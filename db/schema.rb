@@ -20,8 +20,13 @@ ActiveRecord::Schema.define(version: 2021_05_02_115323) do
   end
 
   create_table "solutions", force: :cascade do |t|
+    t.string "link"
+    t.integer "users_id"
+    t.integer "tests_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["tests_id"], name: "index_solutions_on_tests_id"
+    t.index ["users_id"], name: "index_solutions_on_users_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -48,6 +53,8 @@ ActiveRecord::Schema.define(version: 2021_05_02_115323) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "solutions", "tests", column: "tests_id"
+  add_foreign_key "solutions", "users", column: "users_id"
   add_foreign_key "tests", "levels", column: "levels_id"
   add_foreign_key "users", "levels"
 end

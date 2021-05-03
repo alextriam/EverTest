@@ -14,9 +14,9 @@
 
   <body>
     <% if current_user && current_user.is_admin %>
-      <%= render 'admin_menu' %>
+      <%= render 'pages/admin_menu' %>
     <% elsif current_user %>
-      <%= render 'user_menu' %>
+      <%= render 'pages/user_menu' %>
     <% end %>
     <div class="container">
       <div class="row">

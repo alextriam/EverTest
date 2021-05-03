@@ -9,3 +9,9 @@
 password = Time.now.to_f * rand(0.001)
 
 User.create(email: 'alextriam@gmail.com', password: "#{password}", password_confirmation: "#{password}" , is_admin: true)
+
+levels = ['junior', 'middle', 'senior']
+
+levels.each do |level|
+  Level.find_or_create_by(level: level)
+end
