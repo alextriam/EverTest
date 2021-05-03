@@ -17,21 +17,18 @@
 	<div class="form-row">
     <div class="form-group col-md-4">
       <%= f.label :email %>
-      <%= text_field_tag 'email', '', {class: 'form-control'} %>
+      <%= text_field_tag 'email', "#{@invite.email ? @invite.email : ''}", {class: 'form-control'} %>
     </div>
     <div class="form-group col-md-4">
       <%= f.label :password %>
-      <%= text_field_tag 'password', '', {class: 'form-control'} %>
+      <%= text_field_tag 'password', "#{@invite.password ? @invite.password : ''}", {class: 'form-control'} %>
     </div>
     <div class="form-group col-md-4">
       <%= f.label :level_id %>
-      <%= f.select 'level_id', Level.all.map { |l| [ l.level, l.id] }, {include_blank: true}, {class: 'form-control'} %>
+      <%= f.select 'level_id', Level.all.map { |l| [ l.level, l.id] }, {include_blank: true, selected: "#{@invite.level_id ? @invite.level_id : ''}"}, {class: 'form-control'} %>
     </div>
   </div>
 
   <%= f.submit t('.new_invite'), class: 'btn btn-primary' %>
 
 <% end %>
-
-
-<%= params %>
