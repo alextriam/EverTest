@@ -1,1 +1,55 @@
-<h2>EverTesting</h2>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Панель користувача</h1>
+  <p class="lead">Тут ви можете обрати та завантажити завдання, а після виконання додати відповідь</p>
+</div>
+
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Технічне завдання</h4>
+    </div>
+    <div class="card-body <%= @d_none_technical ? 'd-none' : '' %>" id="test_download">
+      <ul class="list-unstyled mt-3 mb-4">
+        <li><%= link_to t('.download'), test_path(@technical_test, format: 'txt'), method: :get, id: 'technical_download' %></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="card-body <%= @d_none_technical ? '' : 'd-none' %>" id="technical_solution">
+      <%= form_with model: @technical_solution do |f| %>
+        <div class="form-group">
+          <%= f.label :link, 'Лінк на гіт' %>
+          <%= f.text_field :link, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :answer, 'Або файл з розв\'язанням' %>
+          <%= f.file_field :answer, class: 'form-control-file' %><br>
+        </div>
+        <div class="form-group">
+          <%= f.submit t('.add_solution'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">Завдання з англійської</h4>
+    </div>
+    <div class="card-body <%= @d_none_english ? 'd-none' : '' %>" id="english_test">
+      <ul class="list-unstyled mt-3 mb-4">
+        <li><%= link_to t('.download'), test_path(@english_test, format: 'txt'), method: :get, class: "",  id: 'english_download' %> </li>
+      </ul>
+    </div>
+    <div class="card-body <%= @d_none_technical ? '' : 'd-none' %>" id="english_solution">
+      <%= form_with model: @english_solution do |f| %>
+        <div class="form-group">
+          <%= f.label :answer, 'Завантажте вирішенний тест з англійської' %>
+          <%= f.file_field :answer, class: 'form-control-file' %><br>
+        </div>
+        <div class="form-group">
+          <%= f.submit t('.add_solution'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
