@@ -8,7 +8,7 @@
 
 password = Time.now.to_f * rand(0.001)
 
-User.create(email: 'alextriam@gmail.com', password: "#{password}", password_confirmation: "#{password}" , is_admin: true)
+User.create(email: 'YOUR_EMAIL', password: "#{password}", password_confirmation: "#{password}" , is_admin: true)
 
 levels = ['junior', 'middle', 'senior']
 
