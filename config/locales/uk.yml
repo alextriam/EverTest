@@ -35,3 +35,12 @@ uk:
   invites:
     new:
       new_invite: Відправити інвайт
+
+  tests:
+    new:
+      add_test: Додати завдання
+
+  pages:
+    user_page:
+      add_solution: Додати рішення
+      download: Завантажити
