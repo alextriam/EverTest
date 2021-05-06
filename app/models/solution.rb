@@ -5,16 +5,9 @@ class Solution < ApplicationRecord
   validate :solution, on: :update
 
   def solution
-    if link.nil? || link.blank? && answer.blank?
-      errors.add(:answer, 'Треба додати або лінк або файл')
+    puts ' solution validate============================================'
+    if link.blank? && answer.blank?
+      errors.add(:solution, 'Треба додати або лінк або файл')
     end
   end
 end
-
-
-
- # def expiration_date_cannot_be_in_the_past
- #    if expiration_date.present? && expiration_date < Date.today
- #      errors.add(:expiration_date, "can't be in the past")
- #    end
- #  end

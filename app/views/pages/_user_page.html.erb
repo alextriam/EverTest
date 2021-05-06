@@ -40,7 +40,7 @@
         <li><%= link_to t('.download'), test_path(@english_test, format: 'txt'), method: :get, class: "",  id: 'english_download' %> </li>
       </ul>
     </div>
-    <div class="card-body <%= @d_none_technical ? '' : 'd-none' %>" id="english_solution">
+    <div class="card-body <%= @d_none_english ? '' : 'd-none' %>" id="english_solution">
       <%= form_with model: @english_solution do |f| %>
         <div class="form-group">
           <%= f.label :answer, 'Завантажте вирішенний тест з англійської' %>

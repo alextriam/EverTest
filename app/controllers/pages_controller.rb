@@ -18,18 +18,28 @@ class PagesController < ApplicationController
 
   private
    def create_solution
-      if Solution.where(user_id: current_user.id, kind: @technical_test.kind).size == 0
-        Solution.create(user_id: current_user.id, test_id: @technical_test.id, kind: @technical_test.kind)
-        @d_none_technical = false
-      else
-        @d_none_technical = true
-      end
+    technical_solution = Solution.where(user_id: current_user.id, kind: @technical_test.kind)
 
-      if Solution.where(user_id: current_user.id, kind: @english_test.kind).size == 0
-        Solution.create(user_id: current_user.id, test_id: @english_test.id, kind: @english_test.kind)
-        @d_none_english = false
-      else
-        @d_none_english = true
-      end
+    if technical_solution.size == 0
+      Solution.create(user_id: current_user.id, test_id: @technical_test.id, kind: @technical_test.kind)
     end
+
+    if technical_solution[0].link.blank? && technical_solution[0].answer.blank?
+      @d_none_technical = false
+    else
+      @d_none_technical = true
+    end
+
+    english_solution = Solution.where(user_id: current_user.id, kind: @english_test.kind)
+
+    if english_solution.size == 0
+      Solution.create(user_id: current_user.id, test_id: @english_test.id, kind: @english_test.kind)
+    end
+
+    if english_solution[0].answer.present?
+      @d_none_english = true
+    else
+      @d_none_english = false
+    end
+  end
 end
